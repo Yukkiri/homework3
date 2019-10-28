@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Система мониторинга здоровья</string>
+    <string name="app_title">Комплексная система\nмониторинга здоровья</string>
+    <string name="author">Пучкова</string>
+    <string name="name">Имя</string>
+    <string name="surname">Фамилия</string>
+    <string name="patronymic">Отчество</string>
+    <string name="save">Сохранить</string>
+    <string name="welcome">Добро пожаловать,\n</string>
+    <string name="age">Возраст</string>
+    <string name="heart_title">Учет кровяного давления</string>
+    <string name="systolic">Систолическое</string>
+    <string name="diastolic">Диастолическое</string>
+    <string name="pulse">Пульс</string>
+    <string name="tachycardia">Тахикардия&#9;&#9;</string>
+    <string name="date">Дата</string>
+    <string name="history">История</string>
+    <string name="incorrecr_date">Некорректно введена дата!</string>
+    <string name="back">Назад</string>
+    <string name="health_title">Жизненные показатели</string>
+    <string name="weight">Вес</string>
+    <string name="steps">Количество шагов</string>
+    <string name="warning">Не все поля заполнены \nили некоторые заполнены некорректно!</string>
+</resources>
