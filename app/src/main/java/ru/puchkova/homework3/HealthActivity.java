@@ -19,7 +19,7 @@ public class HealthActivity extends AppCompatActivity {
     Button save, history, back;
     EditText weight, steps, date;
 
-    DBHeart dbHealth;
+    DBHelper dbHelper;
 
     String sDate;
     int userId, iSteps;
@@ -41,7 +41,7 @@ public class HealthActivity extends AppCompatActivity {
         weight = (EditText) findViewById(R.id.weight);
         steps = (EditText) findViewById(R.id.steps);
         date = (EditText) findViewById(R.id.date);
-        dbHealth = new DBHeart(this);
+        dbHelper = new DBHelper(this);
 
         setInitialDateTime();
         View.OnClickListener oclSave = new View.OnClickListener() {
@@ -52,14 +52,14 @@ public class HealthActivity extends AppCompatActivity {
                 sDate = date.getText().toString();
 
 
-                SQLiteDatabase database = dbHealth.getWritableDatabase();
+                SQLiteDatabase database = dbHelper.getWritableDatabase();
                 ContentValues contentValues = new ContentValues();
-                contentValues.put(DBHealth.KEY_ID, userId);
-                contentValues.put(DBHealth.KEY_WEIGHT, fWeight);
-                contentValues.put(DBHealth.KEY_STEPS, iSteps);
-                contentValues.put(DBHealth.KEY_DATE, sDate);
+                contentValues.put(DBHelper.KEY_ID, userId);
+                contentValues.put(DBHelper.KEY_WEIGHT, fWeight);
+                contentValues.put(DBHelper.KEY_STEPS, iSteps);
+                contentValues.put(DBHelper.KEY_DATE, sDate);
 
-                database.insert(DBHealth.TABLE_CONTACTS, null, contentValues);
+                database.insert(DBHelper.TABLE_HEALTH, null, contentValues);
             }
         };
 

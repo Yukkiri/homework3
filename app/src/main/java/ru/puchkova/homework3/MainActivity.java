@@ -14,6 +14,10 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import static ru.puchkova.homework3.DBHelper.KEY_AGE;
+import static ru.puchkova.homework3.DBHelper.KEY_ID;
+import static ru.puchkova.homework3.DBHelper.KEY_NAME;
+import static ru.puchkova.homework3.DBHelper.KEY_PATRONYMIC;
+import static ru.puchkova.homework3.DBHelper.KEY_SURNAME;
 import static ru.puchkova.homework3.DBHelper.TABLE_CONTACTS;
 
 public class MainActivity extends AppCompatActivity {
@@ -66,6 +70,10 @@ public class MainActivity extends AppCompatActivity {
                     contentValues.put(KEY_AGE, iAge);
 
                     userId = (int) database.insert(TABLE_CONTACTS, null, contentValues);
+                    if(userId == -1){
+                        database.execSQL("SELECT DISTINCT " + KEY_ID + " FROM " + TABLE_CONTACTS + " WHERE " + KEY_SURNAME + " = " + sSurname + " AND " +
+                                KEY_NAME + " = " + sName + " AND " + KEY_PATRONYMIC + " = " + sPatronymic + " AND " + KEY_AGE + " = " + iAge);
+                    }
 
 
                     health.setVisibility(View.VISIBLE);

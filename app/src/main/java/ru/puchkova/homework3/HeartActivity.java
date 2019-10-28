@@ -16,14 +16,13 @@ import android.widget.EditText;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-import static ru.puchkova.homework3.DBHeart.TABLE_CONTACTS;
 
 public class HeartActivity extends AppCompatActivity {
 
     EditText systolic, diastolic, pulse, date;
     CheckBox tachycardia;
     Button save, history, back;
-    DBHeart dbHeart;
+    DBHelper dbHelper;
     int iSystolic, iDiastolic, iPulse, userId;
     boolean bTachycardia;
     String sDate;
@@ -49,7 +48,7 @@ public class HeartActivity extends AppCompatActivity {
 
         userId = intent.getIntExtra("userId", userId);
 
-        dbHeart = new DBHeart(this);
+        dbHelper = new DBHelper(this);
 
         View.OnClickListener oclSave = new View.OnClickListener() {
             @Override
@@ -61,15 +60,15 @@ public class HeartActivity extends AppCompatActivity {
                 sDate = date.getText().toString();
 
 
-                SQLiteDatabase database = dbHeart.getWritableDatabase();
+                SQLiteDatabase database = dbHelper.getWritableDatabase();
                 ContentValues contentValues = new ContentValues();
-                contentValues.put(DBHeart.KEY_ID, userId);
-                contentValues.put(DBHeart.KEY_SYSTOLIC, iSystolic);
-                contentValues.put(DBHeart.KEY_DIASTOLIC, iDiastolic);
-                contentValues.put(DBHeart.KEY_PULSE, iPulse);
-                contentValues.put(DBHeart.KEY_TACHYCARDIA, bTachycardia);
-                contentValues.put(DBHeart.KEY_DATE, sDate);
-                database.insert(TABLE_CONTACTS, null, contentValues);
+                contentValues.put(DBHelper.KEY_ID, userId);
+                contentValues.put(DBHelper.KEY_SYSTOLIC, iSystolic);
+                contentValues.put(DBHelper.KEY_DIASTOLIC, iDiastolic);
+                contentValues.put(DBHelper.KEY_PULSE, iPulse);
+                contentValues.put(DBHelper.KEY_TACHYCARDIA, bTachycardia);
+                contentValues.put(DBHelper.KEY_DATE, sDate);
+                database.insert(DBHelper.TABLE_HEART, null, contentValues);
             }
         };
 
