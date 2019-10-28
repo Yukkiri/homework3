@@ -35,8 +35,6 @@ public class HealthActivity extends AppCompatActivity {
 
         userId = intent.getIntExtra("userId", userId);
 
-        setInitialDateTime();
-
         save = (Button) findViewById(R.id.save);
         history = (Button) findViewById(R.id.history);
         back = (Button) findViewById(R.id.back);
@@ -45,7 +43,7 @@ public class HealthActivity extends AppCompatActivity {
         date = (EditText) findViewById(R.id.date);
         dbHealth = new DBHeart(this);
 
-
+        setInitialDateTime();
         View.OnClickListener oclSave = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
