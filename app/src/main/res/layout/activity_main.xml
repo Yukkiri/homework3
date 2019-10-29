@@ -98,29 +98,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="39dp"
-        android:background="@android:color/transparent"
+        android:background="@drawable/health_button"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/heart"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/ic_hand_light96" />
+        />
 
     <ImageButton
         android:id="@+id/heart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="35dp"
-        android:background="@android:color/transparent"
+        android:background="@drawable/heart_button"
         android:visibility="invisible"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintHorizontal_bias="1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.95"
-        app:srcCompat="@mipmap/ic_heart_light96" />
+        app:layout_constraintVertical_bias="0.95" />
 
     <Button
         android:id="@+id/save"

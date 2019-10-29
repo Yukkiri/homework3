@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         welcome = (TextView) findViewById(R.id.welcome);
         warning = (TextView) findViewById(R.id.warning);
 
+
         dbHelper = new DBHelper(this);
 
 
@@ -71,8 +72,10 @@ public class MainActivity extends AppCompatActivity {
 
                     userId = (int) database.insert(TABLE_CONTACTS, null, contentValues);
                     if(userId == -1){
-                        database.execSQL("SELECT DISTINCT " + KEY_ID + " FROM " + TABLE_CONTACTS + " WHERE " + KEY_SURNAME + " = " + sSurname + " AND " +
-                                KEY_NAME + " = " + sName + " AND " + KEY_PATRONYMIC + " = " + sPatronymic + " AND " + KEY_AGE + " = " + iAge);
+                        Cursor cursor = database.rawQuery("SELECT DISTINCT " + KEY_ID + " FROM " + TABLE_CONTACTS + " WHERE " + KEY_SURNAME + " = '" + sSurname + "' AND " +
+                                KEY_NAME + " = '" + sName + "' AND " + KEY_PATRONYMIC + " = '" + sPatronymic + "' AND " + KEY_AGE + " = " + iAge, null);
+                        cursor.moveToFirst();
+                        userId = cursor.getInt(cursor.getColumnIndex(KEY_ID));
                     }
 
 
@@ -96,23 +99,19 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
+
+
         View.OnClickListener oclHeart = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (flag){
-                    heart.setImageResource(R.mipmap.ic_heart_heavy96);
-                    flag = false;
-                }else{
-                    // возвращаем первую картинку
-                    heart.setImageResource(R.mipmap.ic_heart_light96);
-                    flag=true;
-                }
 
                 Intent intent = new Intent(v.getContext(), HeartActivity.class);
                 intent.putExtra("userId", userId);
                 startActivity(intent);
             }
         };
+
+
 
         View.OnClickListener oclHealth = new View.OnClickListener() {
             @Override
@@ -122,6 +121,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         };
+
+
 
         save.setOnClickListener(oclSave);
         heart.setOnClickListener(oclHeart);
