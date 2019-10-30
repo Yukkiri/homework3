@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
                     health.setVisibility(View.VISIBLE);
                     heart.setVisibility(View.VISIBLE);
-                    welcome.setText(welcome.getText() + sName + "!\n" + userId);
+                    welcome.setText(welcome.getText() + sName);
 
                     surname.setVisibility(View.INVISIBLE);
                     name.setVisibility(View.INVISIBLE);
