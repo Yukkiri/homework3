@@ -19,7 +19,7 @@
         android:layout_marginRight="10dp"
         app:layout_constraintBottom_toTopOf="@+id/surname"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintHorizontal_bias="0.01"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.05"
@@ -29,17 +29,18 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:gravity="fill_horizontal"
         android:text="@string/app_title"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Widget.ActionBar.Menu"
         android:textColor="@color/textColor"
         android:textSize="19sp"
-        android:layout_marginRight="10dp"
-        android:gravity="fill_horizontal"
         app:layout_constraintBottom_toBottomOf="@+id/icon"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.85"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/icon" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/icon"
+        app:layout_constraintTop_toTopOf="@+id/icon"
+        app:layout_constraintVertical_bias="0.5" />
 
     <TextView
         android:id="@+id/a_surname"

@@ -169,14 +169,16 @@
            android:id="@+id/warning"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
+           android:gravity="center_horizontal"
            android:text="@string/warning"
            android:textColor="@color/colorAccent"
-           android:gravity="center_horizontal"
            android:visibility="invisible"
            app:layout_constraintBottom_toTopOf="@+id/save"
            app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintHorizontal_bias="0.496"
            app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@+id/date" />
+           app:layout_constraintTop_toBottomOf="@+id/date"
+           app:layout_constraintVertical_bias="0.5" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
